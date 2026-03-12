@@ -1,0 +1,68 @@
+{
+  "novels": [
+    {
+      "subtitle": "Female-Insert Dark Romance",
+      "meta": "18+ Mature Content",
+      "description": "A curated collection of dark feminine stories, obsessive love, and intimate power dynamics.",
+      "cover": "../image/render/domestication-cover2.png",
+      "link": "#"
+    }
+  ],
+  "gallery": {
+    "title": "Curated Visions",
+    "description": "A collection of rendered images that extends my stories into visual form, from character portraits to scenes of dark intimacy.",
+    "image": "../image/render/starboy.png",
+    "link": "#",
+    "cta": "View More"
+  },
+  "about": {
+    "eyebrow": "Private Brand Journal",
+    "title": "KÖNIGIN",
+    "description": "KÖNIGIN brings together original novels, rendered scenes, and character-driven visual worlds into one dark feminine archive shaped by atmosphere, obsession, and the female gaze.",
+    "links": [
+      {
+        "label": "Disclaimer",
+        "href": "#",
+        "title": "Disclaimer",
+        "description": [
+          "All works presented on this site are fictional and intended as creative expression only.",
+          "Some stories may contain stylized, exaggerated, or culturally specific character portrayals for narrative purposes. Such elements do not necessarily reflect the personal beliefs, political positions, or real-world values of the creator.",
+          "The English-language site presents works translated from original texts written in Simplified Chinese. These translations intentionally retain aspects of the creator’s native writing rhythm, syntax, and literary voice, and may therefore differ from conventional Anglophone prose styles.",
+          "Some works may also include mature, dark, or psychologically intense themes intended for adult readers."
+        ]
+      },
+      {
+        "label": "Copyright",
+        "href": "#",
+        "title": "Copyright",
+        "description": [
+          "Unless otherwise stated, all content on this site marked as original — including original writing, rendered images, visual compositions, and related creative materials — is the intellectual property of the site owner.",
+          "Some works may be inspired by existing fictional archetypes, characters, or source materials. Where applicable, all underlying rights remain with their respective owners, while the original expression, writing, visual composition, and transformative presentation on this site remain the property of the site owner.",
+          "Some visual reference materials or source assets may originate from publicly available online platforms. If you believe that any content on this site infringes your rights, please contact me for review and removal where appropriate."
+        ]
+      },  
+      {
+        "label": "Link Tree",
+        "href": "#",
+        "title": "Link Tree",
+        "description": [
+          "You can also find selected works, updates, and archive content through the external platforms listed below."
+        ],
+        "links": [
+          {
+            "label": "Twitter / X",
+            "href": "https://x.com/konigindominion?s=21"
+          },
+          {
+            "label": "AO3",
+            "href": "https://archiveofourown.org/users/KoniginErotica/works"
+          },
+          {
+            "label": "Tumblr",
+            "href": "https://www.tumblr.com/koniginerotica"
+          }
+        ]
+      }    
+    ]
+  }
+}
