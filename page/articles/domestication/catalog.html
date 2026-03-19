@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>KÖNIGIN | DOMESTICATION</title>
+    <style>
+      :root {
+        --title: #ecdcc7;
+        --text: rgba(236, 220, 199, 0.94);
+        --muted: rgba(236, 220, 199, 0.78);
+        --line: rgba(236, 220, 199, 0.2);
+        --line-strong: rgba(236, 220, 199, 0.3);
+        --line-inner: rgba(236, 220, 199, 0.14);
+        --safe-top: env(safe-area-inset-top, 0px);
+        --safe-right: env(safe-area-inset-right, 0px);
+        --safe-bottom: env(safe-area-inset-bottom, 0px);
+        --safe-left: env(safe-area-inset-left, 0px);
+        --content-max: 71rem;
+      }
+
+      @font-face {
+        font-family: "Cinzel";
+        src: url("/fonts/Cinzel-VariableFont_wght.ttf") format("truetype");
+        font-weight: 400 900;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Tangerine";
+        src: url("/fonts/Tangerine-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        margin: 0;
+        background: #160406;
+        overflow-x: hidden;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        background: #160406;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .page {
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      .page::before,
+      .page::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .page::before {
+        background: url("/image/background/patten.png") center top / cover repeat-y;
+        opacity: 1;
+        z-index: 0;
+      }
+
+      .page::after {
+        background: none;
+      }
+
+      .page__inner {
+        position: relative;
+        z-index: 1;
+        width: min(100%, var(--content-max));
+        margin: 0 auto;
+        padding:
+          calc(1.25rem + var(--safe-top))
+          max(1rem, calc(1rem + var(--safe-right)))
+          calc(4rem + var(--safe-bottom))
+          max(1rem, calc(1rem + var(--safe-left)));
+      }
+
+      .topmark {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.55rem;
+        margin-bottom: 1rem;
+      }
+
+      .topmark__logo {
+        width: clamp(9rem, 19vw, 12rem);
+        height: auto;
+      }
+
+      .ornament-divider {
+        display: block;
+        width: min(20rem, 100%);
+        height: auto;
+        opacity: 0.8;
+      }
+
+      .hero-head {
+        text-align: center;
+        padding-top: 0.55rem;
+      }
+
+      .hero-head__title {
+        margin: 0;
+        color: var(--title);
+        font-family: "Cinzel", "Times New Roman", serif;
+        font-size: clamp(3.1rem, 8vw, 5.8rem);
+        font-weight: 500;
+        line-height: 0.94;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.22);
+      }
+
+      .hero-head__pairing {
+        margin: 0.7rem 0 0;
+        color: var(--text);
+        font-size: clamp(1.25rem, 2.1vw, 1.95rem);
+      }
+
+      .hero-head__tagline {
+        margin: 1.2rem auto 0;
+        max-width: 42rem;
+        color: var(--title);
+        font-size: clamp(1.4rem, 2.15vw, 1.95rem);
+        font-style: italic;
+        line-height: 1.45;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+      }
+
+      .mini-divider {
+        display: flex;
+        justify-content: center;
+        margin: 1.15rem auto 1.7rem;
+      }
+
+      .hero-shell {
+        position: relative;
+        padding: 0.55rem 0 0.2rem;
+      }
+
+      .hero-frame {
+        position: relative;
+        margin-left: clamp(3rem, 7vw, 5.25rem);
+        padding:
+          clamp(1.8rem, 4vw, 2.5rem)
+          clamp(1.25rem, 4vw, 2.7rem)
+          clamp(1.55rem, 4vw, 2.3rem)
+          clamp(10rem, 25vw, 16.5rem);
+        min-height: clamp(21rem, 37vw, 27rem);
+        border: 1px solid rgba(236, 220, 199, 0.18);
+        background:
+          linear-gradient(180deg, rgba(94, 22, 30, 0.028), rgba(28, 8, 12, 0.022)),
+          linear-gradient(135deg, rgba(255, 239, 214, 0.01), transparent 24%, transparent 78%, rgba(255, 239, 214, 0.008)),
+          rgba(28, 8, 12, 0.005);
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 236, 214, 0.012),
+          0 0.6rem 1.4rem rgba(0, 0, 0, 0.04);
+        overflow: visible;
+      }
+
+      .hero-frame::before,
+      .hero-frame::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .hero-frame::before {
+        inset: 0.9rem;
+        border: 1px solid rgba(236, 220, 199, 0.14);
+      }
+
+      .hero-frame::after {
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(236, 220, 199, 0.014), transparent 14%, transparent 86%, rgba(236, 220, 199, 0.014)),
+          linear-gradient(180deg, rgba(236, 220, 199, 0.014), transparent 18%, transparent 82%, rgba(236, 220, 199, 0.014));
+        mix-blend-mode: screen;
+      }
+
+      .hero-cover,
+      .hero-content {
+        position: relative;
+      }
+
+      .hero-cover {
+        position: absolute;
+        top: clamp(-0.9rem, -0.8vw, -0.25rem);
+        left: clamp(-2.1rem, -0.8vw, -0.7rem);
+        width: clamp(11rem, 21vw, 16rem);
+        z-index: 4;
+      }
+
+      .hero-cover::before {
+        content: "";
+        position: absolute;
+        inset: 10% 8% -8% 4%;
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.28), transparent 70%);
+        filter: blur(12px);
+        z-index: -1;
+      }
+
+      .hero-cover img,
+      .hero-card__cover {
+        width: 100%;
+        aspect-ratio: 0.72;
+        object-fit: cover;
+        border: 1px solid rgba(236, 220, 199, 0.16);
+        box-shadow:
+          0 1.3rem 2rem rgba(0, 0, 0, 0.18),
+          -0.35rem 0.25rem 1rem rgba(0, 0, 0, 0.08);
+      }
+
+      .hero-content {
+        z-index: 2;
+        max-width: 35rem;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.95rem;
+        min-width: 0;
+        padding-top: 0.1rem;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem 0.75rem;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.42;
+      }
+
+      .hero-meta span[aria-hidden="true"] {
+        color: rgba(236, 220, 199, 0.5);
+      }
+
+      .hero-rule {
+        width: min(100%, 34rem);
+        height: 1px;
+        background: linear-gradient(90deg, rgba(236, 220, 199, 0.28), rgba(236, 220, 199, 0.05));
+      }
+
+      .hero-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 0.95rem;
+        max-width: 33rem;
+      }
+
+      .hero-summary p {
+        margin: 0;
+        font-size: clamp(1.03rem, 1.6vw, 1.18rem);
+        line-height: 1.72;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.14);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        min-width: 13rem;
+        padding: 0.9rem 1.6rem;
+        border: 1px solid rgba(236, 220, 199, 0.22);
+        border-radius: 999px;
+        background:
+          linear-gradient(180deg, rgba(101, 22, 31, 0.24), rgba(37, 9, 13, 0.3)),
+          rgba(92, 21, 30, 0.1);
+        color: var(--title);
+        font-family: "Cinzel", "Times New Roman", serif;
+        font-size: 0.98rem;
+        letter-spacing: 0.05em;
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 240, 222, 0.03),
+          0 0.3rem 0.9rem rgba(0, 0, 0, 0.05);
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          background-color 180ms ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-1px);
+        border-color: rgba(236, 220, 199, 0.3);
+        background:
+          linear-gradient(180deg, rgba(112, 26, 36, 0.28), rgba(42, 10, 15, 0.36)),
+          rgba(92, 21, 30, 0.14);
+        outline: none;
+      }
+
+      .section-shell {
+        position: relative;
+        margin-top: 2rem;
+      }
+
+      .section-shell::before,
+      .section-shell::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(236, 220, 199, 0.24), transparent);
+        pointer-events: none;
+      }
+
+      .section-shell::before {
+        top: 0;
+      }
+
+      .section-shell::after {
+        bottom: 0;
+      }
+
+      .section-shell__inner {
+        position: relative;
+        padding: 1.2rem 0 1.35rem;
+      }
+
+      .section-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        margin: 0 0 1.25rem;
+        text-align: center;
+      }
+
+      .section-title__text {
+        color: var(--title);
+        font-family: "Cinzel", "Times New Roman", serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 500;
+      }
+
+      .chapter-panel {
+        position: relative;
+        border: 1px solid rgba(236, 220, 199, 0.18);
+        background:
+          linear-gradient(180deg, rgba(65, 16, 23, 0.018), rgba(14, 4, 7, 0.022)),
+          rgba(20, 6, 9, 0.005);
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 240, 222, 0.01),
+          0 0.6rem 1.4rem rgba(0, 0, 0, 0.04);
+      }
+
+      .chapter-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0.9rem;
+        border: 1px solid rgba(236, 220, 199, 0.12);
+        pointer-events: none;
+      }
+
+      .chapter-list {
+        position: relative;
+        z-index: 1;
+      }
+
+      .chapter-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1rem;
+        align-items: center;
+        padding: 1.2rem 1.45rem;
+        border-top: 1px solid rgba(236, 220, 199, 0.12);
+        transition:
+          background-color 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .chapter-row:first-child {
+        border-top: 0;
+      }
+
+      .chapter-row:hover {
+        background: rgba(84, 19, 28, 0.05);
+        box-shadow: inset 0 0 2rem rgba(157, 39, 49, 0.02);
+      }
+
+      .chapter-row__main {
+        min-width: 0;
+      }
+
+      .chapter-row__heading {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        min-width: 0;
+      }
+
+      .chapter-row__number {
+        color: var(--title);
+        font-family: "Cinzel", "Times New Roman", serif;
+        font-size: 1.08rem;
+        letter-spacing: 0.06em;
+        flex: 0 0 auto;
+      }
+
+      .chapter-row__title {
+        margin: 0;
+        color: var(--title);
+        font-size: clamp(1.35rem, 2.4vw, 2rem);
+        font-weight: 400;
+        min-width: 0;
+      }
+
+      .chapter-row__description {
+        margin: 0.5rem 0 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .chapter-row__lock {
+        color: rgba(236, 220, 199, 0.72);
+        font-size: 0.95rem;
+        margin-right: 0.55rem;
+      }
+
+      .chapter-row__button {
+        min-width: 7.4rem;
+        padding: 0.7rem 1.1rem;
+        font-size: 0.9rem;
+      }
+
+      .chapter-row__button.is-locked {
+        background:
+          linear-gradient(180deg, rgba(63, 18, 25, 0.12), rgba(28, 8, 12, 0.18)),
+          rgba(36, 12, 16, 0.04);
+        color: var(--muted);
+      }
+
+      .empty-state {
+        padding: 2rem 1.4rem;
+        text-align: center;
+        color: var(--text);
+      }
+
+      .footer-shell {
+        position: relative;
+        margin-top: 1.9rem;
+      }
+
+      .footer-shell::before,
+      .footer-shell::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(236, 220, 199, 0.22), transparent);
+        pointer-events: none;
+      }
+
+      .footer-shell::before {
+        top: 0;
+      }
+
+      .footer-shell::after {
+        bottom: 0;
+      }
+
+      .footer-shell__inner {
+        padding: 1.35rem 0 1.45rem;
+      }
+
+      .footer-meta__stats {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        color: var(--muted);
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .footer-divider {
+        display: flex;
+        justify-content: center;
+        margin: 1.25rem 0 1.2rem;
+      }
+
+      .footer-meta__nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .footer-meta__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3.4rem;
+        border-top: 1px solid rgba(236, 220, 199, 0.18);
+        border-bottom: 1px solid rgba(236, 220, 199, 0.18);
+        background:
+          linear-gradient(180deg, rgba(68, 16, 24, 0.014), rgba(20, 6, 9, 0.012));
+        color: var(--title);
+        font-family: "Cinzel", "Times New Roman", serif;
+        font-size: 0.96rem;
+        letter-spacing: 0.03em;
+        transition: background-color 160ms ease, border-color 160ms ease;
+      }
+
+      .footer-meta__link:hover,
+      .footer-meta__link:focus-visible {
+        background: rgba(90, 22, 32, 0.05);
+        border-color: rgba(236, 220, 199, 0.24);
+        outline: none;
+      }
+
+      @media (max-width: 760px) {
+        .hero-shell {
+          padding-top: 0.4rem;
+        }
+
+        .hero-frame {
+          margin-left: 0.8rem;
+          padding:
+            1.05rem
+            0.95rem
+            0.95rem
+            7.2rem;
+          min-height: 14.6rem;
+        }
+
+        .hero-frame::before {
+          inset: 0.55rem;
+        }
+
+        .hero-cover {
+          top: -0.5rem;
+          left: -0.45rem;
+          width: 6.9rem;
+        }
+
+        .hero-content {
+          gap: 0.55rem;
+          max-width: none;
+        }
+
+        .hero-head__tagline {
+          font-size: 1.28rem;
+        }
+
+        .hero-meta {
+          gap: 0.2rem 0.45rem;
+          font-size: 0.8rem;
+          line-height: 1.3;
+        }
+
+        .hero-rule {
+          width: 100%;
+        }
+
+        .hero-summary {
+          gap: 0.45rem;
+        }
+
+        .hero-summary p {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
+          font-size: 0.88rem;
+          line-height: 1.42;
+        }
+
+        .button {
+          min-width: 0;
+          width: auto;
+          padding: 0.65rem 1rem;
+          font-size: 0.8rem;
+          white-space: nowrap;
+        }
+
+        .section-shell {
+          margin-top: 1.7rem;
+        }
+
+        .section-shell__inner {
+          padding: 1rem 0 1.15rem;
+        }
+
+        .chapter-row {
+          grid-template-columns: minmax(0, 1fr) auto;
+          gap: 0.75rem;
+          padding: 0.95rem 1rem;
+        }
+
+        .chapter-row__title {
+          font-size: 1.2rem;
+        }
+
+        .chapter-row__description {
+          font-size: 0.86rem;
+          line-height: 1.45;
+        }
+
+        .chapter-row__button {
+          min-width: 6.2rem;
+          padding: 0.58rem 0.9rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .page__inner {
+          padding:
+            calc(1rem + var(--safe-top))
+            max(0.9rem, calc(0.9rem + var(--safe-right)))
+            calc(2.8rem + var(--safe-bottom))
+            max(0.9rem, calc(0.9rem + var(--safe-left)));
+        }
+
+        .hero-head__title {
+          font-size: 2.75rem;
+        }
+
+        .hero-head__pairing {
+          font-size: 1.02rem;
+        }
+
+        .hero-head__tagline {
+          font-size: 1.14rem;
+          line-height: 1.38;
+        }
+
+        .hero-frame {
+          margin-left: 0.5rem;
+          padding:
+            0.9rem
+            0.76rem
+            0.85rem
+            6.45rem;
+          min-height: 13.25rem;
+        }
+
+        .hero-cover {
+          top: -0.3rem;
+          left: -0.28rem;
+          width: 6rem;
+        }
+
+        .hero-content {
+          gap: 0.44rem;
+        }
+
+        .hero-summary p {
+          -webkit-line-clamp: 2;
+          font-size: 0.82rem;
+          line-height: 1.36;
+        }
+
+        .chapter-row {
+          grid-template-columns: minmax(0, 1fr);
+          padding: 0.9rem;
+        }
+
+        .chapter-row__heading {
+          gap: 0.55rem;
+        }
+
+        .chapter-row__title {
+          font-size: 1.12rem;
+        }
+
+        .chapter-row__action {
+          justify-self: start;
+        }
+
+        .footer-meta__nav {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="page__inner">
+        <div class="topmark">
+          <img class="topmark__logo" src="/image/element/logo-home.png" alt="KÖNIGIN" />
+          <img class="ornament-divider" src="/image/element/divider.png" alt="" aria-hidden="true" />
+        </div>
+
+        <header class="hero-head" id="hero-head"></header>
+        <section id="hero-card-container"></section>
+
+        <section class="section-shell chapter-section" aria-labelledby="chapters-title">
+          <div class="section-shell__inner">
+            <h2 class="section-title" id="chapters-title">
+              <span class="section-title__text">Chapters</span>
+              <img class="ornament-divider" src="/image/element/divider.png" alt="" aria-hidden="true" />
+            </h2>
+            <div id="chapter-list-container"></div>
+          </div>
+        </section>
+
+        <footer class="footer-shell footer-meta" id="footer-meta"></footer>
+      </div>
+    </main>
+
+    <script>
+      function escapeHtml(value) {
+        return String(value ?? "").replace(/[&<>'"]/g, (char) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          "'": "&#39;",
+          '"': "&quot;"
+        }[char]));
+      }
+
+      function renderMeta(items) {
+        const safeItems = Array.isArray(items) ? items.filter(Boolean) : [];
+        if (!safeItems.length) return "";
+        return safeItems
+          .map((item) => `<span>${escapeHtml(item)}</span>`)
+          .join('<span aria-hidden="true">&bull;</span>');
+      }
+
+      function renderHeroHead(entry) {
+        return `
+          <h1 class="hero-head__title">${escapeHtml(entry.title)}</h1>
+          <p class="hero-head__pairing">${escapeHtml(entry.pairing || "")}</p>
+          <p class="hero-head__tagline">${escapeHtml(entry.tagline || "")}</p>
+          <div class="mini-divider" aria-hidden="true">
+            <img class="ornament-divider" src="/image/element/divider.png" alt="" aria-hidden="true" />
+          </div>
+        `;
+      }
+
+      function renderSummary(paragraphs) {
+        const safeParagraphs = Array.isArray(paragraphs) ? paragraphs : [];
+        return `
+          <div class="hero-summary">
+            ${safeParagraphs.map((text) => `<p>${escapeHtml(text)}</p>`).join("")}
+          </div>
+        `;
+      }
+
+      function renderHeroCard(entry) {
+        return `
+          <section class="hero-shell">
+            <article class="hero-frame">
+              <div class="hero-cover">
+                <img
+                  class="hero-card__cover"
+                  src="${escapeHtml(entry.cover)}"
+                  alt="${escapeHtml(entry.title)} cover"
+                />
+              </div>
+              <div class="hero-content">
+                <div class="hero-meta">${renderMeta(entry.meta)}</div>
+                <div class="hero-rule" aria-hidden="true"></div>
+                ${renderSummary(entry.summary)}
+              </div>
+            </article>
+          </section>
+        `;
+      }
+
+      function renderChapterRow(chapter) {
+        const buttonLabel = chapter.locked
+          ? (chapter.lockLabel || "Locked")
+          : (chapter.buttonText || "Read");
+
+        return `
+          <article class="chapter-row" id="${escapeHtml(chapter.id || "")}">
+            <div class="chapter-row__main">
+              <div class="chapter-row__heading">
+                <span class="chapter-row__number">${escapeHtml(chapter.number || "")}</span>
+                <h3 class="chapter-row__title">
+                  ${chapter.locked ? `<span class="chapter-row__lock" aria-hidden="true">🔒</span>` : ""}
+                  ${escapeHtml(chapter.title || "")}
+                </h3>
+              </div>
+              ${chapter.description ? `<p class="chapter-row__description">${escapeHtml(chapter.description)}</p>` : ""}
+            </div>
+            <div class="chapter-row__action">
+              <a
+                class="button chapter-row__button${chapter.locked ? " is-locked" : ""}"
+                href="${escapeHtml(chapter.href || "#")}"
+                ${chapter.locked ? 'aria-disabled="true"' : ""}
+              >
+                ${escapeHtml(buttonLabel)}
+              </a>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderChapterList(chapters) {
+        if (!Array.isArray(chapters) || !chapters.length) {
+          return `
+            <div class="chapter-panel">
+              <div class="empty-state">No chapters have been catalogued yet.</div>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="chapter-panel">
+            <div class="chapter-list">
+              ${chapters.map(renderChapterRow).join("")}
+            </div>
+          </div>
+        `;
+      }
+
+      function renderFooter(entry) {
+        const stats = entry.stats || {};
+        const back = entry.footerLinks?.back || { label: "Back", href: "#" };
+        const next = entry.footerLinks?.next || { label: "Next", href: "#" };
+
+        return `
+          <div class="footer-shell__inner">
+            <div class="footer-meta__stats">
+              <span>Status: ${escapeHtml(stats.status || "Unknown")}</span>
+              <span aria-hidden="true">&bull;</span>
+              <span>Chapters: ${escapeHtml(stats.chapters ?? "0")}</span>
+              <span aria-hidden="true">&bull;</span>
+              <span>Last Updated: ${escapeHtml(stats.lastUpdated || "Unknown")}</span>
+            </div>
+            <div class="footer-divider" aria-hidden="true">
+              <img class="ornament-divider" src="/image/element/divider.png" alt="" aria-hidden="true" />
+            </div>
+            <div class="footer-meta__nav">
+              <a class="footer-meta__link" href="${escapeHtml(back.href || "#")}">${escapeHtml(back.label || "Back")}</a>
+              <a class="footer-meta__link" href="${escapeHtml(next.href || "#")}">${escapeHtml(next.label || "Next")}</a>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderLoadError() {
+        document.title = "KÖNIGIN | Entry Unavailable";
+        document.getElementById("hero-head").innerHTML = `
+          <h1 class="hero-head__title">Entry Unavailable</h1>
+          <p class="hero-head__tagline">Unable to load the article data file.</p>
+          <div class="mini-divider" aria-hidden="true">
+            <img class="ornament-divider" src="/image/element/divider.png" alt="" aria-hidden="true" />
+          </div>
+        `;
+        document.getElementById("hero-card-container").innerHTML = `
+          <section class="hero-shell">
+            <article class="hero-frame">
+              <div class="hero-content">
+                ${renderSummary(["Please verify /json/articles/domestication.json is available and valid JSON."])}
+              </div>
+            </article>
+          </section>
+        `;
+        document.getElementById("chapter-list-container").innerHTML = renderChapterList([]);
+        document.getElementById("footer-meta").innerHTML = renderFooter({});
+      }
+
+      function renderEntry(entry) {
+        document.title = `KÖNIGIN | ${entry.title || "Entry"}`;
+        document.getElementById("hero-head").innerHTML = renderHeroHead(entry);
+        document.getElementById("hero-card-container").innerHTML = renderHeroCard(entry);
+        document.getElementById("chapter-list-container").innerHTML = renderChapterList(entry.chapters);
+        document.getElementById("footer-meta").innerHTML = renderFooter(entry);
+      }
+
+      fetch("/json/articles/domestication.json", { cache: "no-store" })
+        .then((response) => {
+          if (!response.ok) throw new Error("Failed to load entry data.");
+          return response.json();
+        })
+        .then((data) => renderEntry(data))
+        .catch(() => renderLoadError());
+    </script>
+  </body>
+</html>

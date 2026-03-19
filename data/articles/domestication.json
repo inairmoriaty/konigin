@@ -1,0 +1,78 @@
+{
+  "id": "domestication",
+  "title": "DOMESTICATION",
+  "pairing": "Enemy Colonel × Prisoner",
+  "tagline": "But if you tame me, then we shall need each other.",
+  "cover": "/image/cover/domestication.png",
+  "meta": ["18+", "Dark Romance", "Ongoing"],
+  "summary": [
+    "Ensnared, enraptured, and drawn into the quiet gravity of something inhuman, you enter a chamber of silk, appetite, and patient ruin. Every gesture feels ceremonial. Every kindness carries a hook.",
+    "What begins as fear slowly reshapes itself into dependency, then desire. In the hush between threat and tenderness, escape becomes a fading instinct and devotion begins to look like fate."
+  ],
+  "primaryAction": {
+    "label": "Enter the Work",
+    "href": "#chapter-01"
+  },
+  "stats": {
+    "status": "Ongoing",
+    "chapters": 12,
+    "lastUpdated": "March 15, 2026"
+  },
+  "footerLinks": {
+    "back": {
+      "label": "Back to Novels",
+      "href": "/page/novels.html"
+    },
+    "next": {
+      "label": "Next Work",
+      "href": "#"
+    }
+  },
+  "chapters": [
+    {
+      "id": "chapter-01",
+      "number": "01",
+      "title": "The Collar",
+      "description": "A quiet beginning of something that does not let go.",
+      "href": "#",
+      "locked": false,
+      "buttonText": "Read"
+    },
+    {
+      "id": "chapter-02",
+      "number": "02",
+      "title": "Constriction",
+      "description": "Control tightens until resistance begins to feel intimate.",
+      "href": "#",
+      "locked": false,
+      "buttonText": "Read"
+    },
+    {
+      "id": "chapter-03",
+      "number": "03",
+      "title": "Behind the Veil",
+      "description": "The ritual beneath the tenderness finally shows its teeth.",
+      "href": "#",
+      "locked": false,
+      "buttonText": "Read"
+    },
+    {
+      "id": "chapter-04",
+      "number": "04",
+      "title": "Restless Webbing",
+      "description": "A locked continuation reserved for patrons of the archive.",
+      "href": "#",
+      "locked": true,
+      "lockLabel": "VIP Locked"
+    },
+    {
+      "id": "chapter-05",
+      "number": "05",
+      "title": "Obedience",
+      "description": "The next descent waits behind a sealed door.",
+      "href": "#",
+      "locked": true,
+      "lockLabel": "Locked"
+    }
+  ]
+}

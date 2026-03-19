@@ -1,0 +1,73 @@
+[
+  {
+    "id": "domestication",
+    "title": "Domestication",
+    "pairing": "Enemy Colonel x POW",
+    "cover": "../image/cover/domestication.png",
+    "tags": ["Dark Romance", "Explicit", "Obsession", "Female Insert"],
+    "summary": "A slow-burning descent into possession, ritual tenderness, and dangerous intimacy.",
+    "workType": "Original",
+    "buttonText": "Read Entry",
+    "href": "/page/articles/domestication/catalog.html",
+    "featured": true,
+    "rating": "18+ Mature Content",
+    "status": "Ongoing"
+  },
+  {
+    "id": "domestic-domestication",
+    "title": "Domestic Domestication",
+    "pairing": "Handler x You",
+    "cover": "../image/render/domestication-cover1.png",
+    "tags": ["Dark Romance", "Explicit", "Captivity"],
+    "summary": "Two captive beasts wrestle for dominance, bending each other toward dangerous submission.",
+    "workType": "Original",
+    "buttonText": "Read Entry",
+    "href": "/page/articles/domestication/catalog.html",
+    "featured": false,
+    "rating": "18+ Mature Content",
+    "status": "Complete"
+  },
+  {
+    "id": "bodycheck",
+    "title": "Bodycheck",
+    "pairing": "Rival x You",
+    "cover": "../image/render/bodycheck.png",
+    "tags": ["Dark Romance", "Explicit", "Sports"],
+    "summary": "A violent, obsessive dance of heat and hatred between rivals teetering on the edge of ruin.",
+    "workType": "Original",
+    "buttonText": "Read Entry",
+    "href": "#",
+    "featured": false,
+    "rating": "18+ Mature Content",
+    "status": "Draft"
+  },
+  {
+    "id": "hunt",
+    "title": "Hunt",
+    "pairing": "Hunter x You",
+    "cover": "../image/render/hunt.png",
+    "tags": ["Dark Romance", "Explicit", "Wilderness"],
+    "summary": "Stalked into the wilderness, a captured prey loses herself to the dark and the man inside it.",
+    "workType": "Original",
+    "buttonText": "Read Entry",
+    "href": "#",
+    "featured": false,
+    "rating": "18+ Mature Content",
+    "status": "Ongoing"
+  },
+  {
+    "id": "scream",
+    "title": "Scream",
+    "pairing": "Ghostface x You",
+    "cover": "../image/render/scream.png",
+    "tags": ["Dark Romance", "Explicit", "Slasher"],
+    "summary": "Phone calls, masks, and breathless terror turn pursuit into an intoxicating form of devotion.",
+    "workType": "Fanfiction",
+    "buttonText": "Read Entry",
+    "href": "#",
+    "featured": false,
+    "rating": "18+ Mature Content",
+    "fandom": "Scream",
+    "status": "Complete"
+  }
+]
